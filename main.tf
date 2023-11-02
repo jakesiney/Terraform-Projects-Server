@@ -1,11 +1,5 @@
 terraform {
 
-  cloud {
-    organization = "cyberdyne-systems"
-    workspaces {
-      name = "tutorial-2"
-    }
-  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
