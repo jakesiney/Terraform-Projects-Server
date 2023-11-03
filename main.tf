@@ -3,10 +3,15 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 4.16"
+      version = "~> 5.0"
     }
   }
 
-  required_version = ">= 1.2.0"
+  backend "s3" {
+    bucket = "jsiney-terraform-state"
+    key    = "tf/keys/ec2project/terraform.tfstate"
+    region = "eu-west-2"
+
+  }
 
 }
