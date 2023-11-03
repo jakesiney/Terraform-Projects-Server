@@ -1,6 +1,6 @@
 resource "aws_security_group" "tf-ec2-sg" {
-  name_prefix = "example-sg-"
-  vpc_id      = aws_default_vpc.default.id
+  name   = "tf-ec2-sg"
+  vpc_id = aws_default_vpc.default.id
 
   # Allow incoming traffic on ports 22 (SSH) and 80 (HTTP)
   ingress {
