@@ -3,7 +3,7 @@ resource "aws_instance" "tf-ec2" {
   instance_type = "t2.micro"
   key_name      = "uploader-key"
 
-  security_groups = "aws_security_group.tf-ec2-sg"
+  security_groups = "tf-ec2-sg"
   tags = {
     Name = "terraform-example"
   }
