@@ -16,7 +16,7 @@ resource "aws_security_group" "tf-ec2-sg" {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["77.102.78.14/32"] # Restricted to my IP address only.
 
     description = "HTTP"
   }
