@@ -10,16 +10,3 @@ terraform {
   required_version = ">= 1.2.0"
 
 }
-
-provider "aws" {
-  region = "eu-west-2"
-}
-
-resource "aws_instance" "tutorial" {
-  ami           = "ami-06ce6bb40e50efe77"
-  instance_type = "t2.micro"
-  tags = {
-    Name = "terraform-example"
-  }
-
-}
