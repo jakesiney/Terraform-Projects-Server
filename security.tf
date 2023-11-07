@@ -16,9 +16,18 @@ resource "aws_security_group" "tf-ec2-sg" {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = ["77.102.78.14/32"] # Restricted to my IP address only.
+    cidr_blocks = ["0.0.0.0/0"] # Restricted to my IP address only.
 
     description = "HTTP"
+  }
+
+  ingress {
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"] # Restricted to my IP address only.
+
+    description = "HTTPS"
   }
 
   egress {
