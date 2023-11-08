@@ -2,7 +2,7 @@ resource "aws_instance" "terraform-projects-server" {
   ami             = "ami-06ce6bb40e50efe77"
   instance_type   = "t2.micro"
   key_name        = "uploader-key"
-  security_groups = [aws_security_group.projects-server-sg.id]
+  security_groups = ["projects-server-sg"]
   tags = {
     Name = "terraform-projects-server"
   }
