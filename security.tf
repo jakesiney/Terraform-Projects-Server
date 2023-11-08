@@ -1,5 +1,5 @@
-resource "aws_security_group" "tf-ec2-sg" {
-  name   = "tf-ec2-sg"
+resource "aws_security_group" "projects-server-sg" {
+  name   = "projects-server-sg"
   vpc_id = aws_default_vpc.default.id
 
   # Allow incoming traffic on ports 22 (SSH) and 80 (HTTP)
@@ -7,7 +7,7 @@ resource "aws_security_group" "tf-ec2-sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["77.102.78.14/32"] # Restricted to my IP address only.
+    cidr_blocks = ["0.0.0.0/0"] # Restricted to my IP address only.
 
     description = "SSH"
   }
@@ -20,6 +20,8 @@ resource "aws_security_group" "tf-ec2-sg" {
 
     description = "HTTP"
   }
+
+
 
   ingress {
     from_port   = 443
